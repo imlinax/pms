@@ -1,20 +1,35 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include "global.h"
+#include "fileop.h"
+#include "init.h"
 /*
 *初始化系统,读取数据文件,创建员工链表与奖惩链表
 */
-int init_sys()
+GINFO* init_sys()
 {
 	FILE *fpem;
 	FILE *fprp;
-	GINFO ginfo;
+	GINFO pginfo=(GINFO *)malloc(sizeof(GINFO));
+	pginfo->em_count=0;
+	pginfo->rp_count=0;
+	pginfo->em_head=NULL;
+	pginfo->rp_head=NULL;
 	if(init_files(&fpem,&fprp)==0)
 	{
-		save_all(fp,);
+		save_all(fpem,&ginfo);
+		save_all(fprp,&ginfo);
+//		fclose(fpem);
+//		fclose(fprp);
+	//	return 0;
 	}
+	pginfo=load_all(fpem);
+	return load_all(fpem);
 }
 /*
 *找不到文件返回0,找到文件返回1
 */
-int init_files(FILE **fpem,FILE **fpre)
+int init_files(FILE **fpem,FILE **fprp)
 {
 	FILE *fp_employee=NULL;
 	FILE *fp_rewardpunish=NULL;

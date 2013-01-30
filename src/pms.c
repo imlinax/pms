@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "init.h"
 #include "menu.h"
 
 int main()

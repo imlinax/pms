@@ -1,8 +1,7 @@
-OBJ:=employee.o menu.o pms.o rewardpunish.o
+OBJ:=employee.o menu.o pms.o rewardpunish.o init.o fileop.o
 pms:$(OBJ) *.h
 	gcc -o pms $(OBJ)
-$(OBJ):$(@:.o=.c)
-	gcc -o $@ -c $^
 .PHONY:clean
 clean:
-	-rm *.o pms
+	-rm *.o 
+	-rm pms

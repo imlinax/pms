@@ -6,17 +6,19 @@
 /*
 *加载存在文件中的所有信息
 */
-GINFO	 *load_all(FILE *fp)
+GINFO	 *load_all(FILE *fpem,FILE *fpep)
 {
 	GINFO *pginfo=(GINFO*)malloc(sizeof(GINFO));
-	if(fread(pginfo,sizeof(GINFO),1,fp)<1)
+	if(fread(pginfo,sizeof(GINFO),1,fpem)<1)
 	{
 		fprintf(stderr,"加载配置文件失败!\n");
 		exit(1);
 	}
+	pginfo->em_head=load_employees(fpem,pginfo->em_count);
+	pginfo->rm_head=load_rewardpunish(fprp,pginfo->rp_count);
+
 	return pginfo;
-}
-/*
+}/*
 *加载所有员工
 *@count:要读取的员工数
 */
