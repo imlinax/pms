@@ -1,0 +1,913 @@
+cscope 15 $HOME/develop/c/pms/src -q 0000000067 0000004307
+	@employee.c
+
+	@employee.h
+
+1 #i‚de‡
+_EMPLOYEES_H
+
+
+2 
+	#_EMPLOYEES_H
+
+
+	)
+
+4 
+	#EMP_SAVE_SIZE
+ ((
+EMPLOYEE
+)-(EMPLOYEE*))
+
+	)
+
+5 
+	sem∂oyì
+
+
+7 
+	mid
+;
+
+8 
+	m«me
+[32];
+
+9 
+	mtôÀ
+;
+
+10 
+	mßœy
+;
+
+11 
+	m⁄löe
+;
+
+12 
+em∂oyì
+* 
+	m√xt
+;
+
+13 }
+	tEMPLOYEE
+;
+
+	@fileop.c
+
+1 
+	~<°dio.h
+>
+
+2 
+	~<°dlib.h
+>
+
+3 
+	~"em∂oyì.h
+"
+
+4 
+	~"ªw¨dpunish.h
+"
+
+5 
+	~"globÆ.h
+"
+
+9 
+GINFO
+ *
+	$lﬂd_Æl
+(
+FILE
+ *
+Â
+)
+
+11 
+GINFO
+ *
+pgöfo
+=(GINFO*)
+	`mÆloc
+((GINFO));
+
+12 if(
+	`‰ód
+(
+pgöfo
+,(
+GINFO
+),1,
+Â
+)<1)
+
+14 
+	`Ârötf
+(
+°dîr
+,"Âä†ËΩΩÈÖçÁΩÆÊñá‰ª∂Â§±Ë¥•!\n");
+
+15 
+	`exô
+(1);
+
+17  
+pgöfo
+;
+
+18 
+	}
+}
+
+23 
+EMPLOYEE
+ *
+	$lﬂd_em∂oyìs
+(
+FILE
+ *
+Â
+,
+cou¡
+)
+
+25 
+i
+=0;
+
+26 if(
+cou¡
+<1)
+
+28  
+NULL
+;
+
+30 
+EMPLOYEE
+* 
+phód
+=(EMPLOYEE*)
+	`mÆloc
+(
+EMP_SAVE_SIZE
+);
+
+31 
+EMPLOYEE
+* 
+±mp
+=
+phód
+;
+
+32 
+	`f£ek
+(
+Â
+,(
+GINFO
+),
+SEEK_SET
+);
+
+33 if(
+±mp
+==
+NULL
+)
+
+35 
+	`exô
+(1);
+
+37 
+i
+=0;i<
+cou¡
+-1;i++)
+
+39 
+	`‰ód
+(
+±mp
+,(
+EMP_SAVE_SIZE
+),1,
+Â
+);
+
+40 
+±mp
+->
+√xt
+=(
+EMPLOYEE
+*)
+	`mÆloc
+(
+EMP_SAVE_SIZE
+);
+
+41 if(
+±mp
+->
+√xt
+==
+NULL
+)
+
+43 
+	`Ârötf
+(
+°dîr
+,"memoryállocationÉrror!\n");
+
+44 
+	`exô
+(1);
+
+46 
+±mp
+ıtmp->
+√xt
+;
+
+48 
+	`‰ód
+(
+±mp
+,(
+EMP_SAVE_SIZE
+),1,
+Â
+);
+
+49 
+±mp
+->
+√xt
+=
+NULL
+;
+
+50  
+phód
+;
+
+51 
+	}
+}
+
+55 
+RP
+ *
+	$lﬂd_ªw¨dpunish
+(
+FILE
+ *
+Â
+,
+cou¡
+)
+
+57 
+i
+=0;
+
+58 if(
+cou¡
+<1)
+
+60  
+NULL
+;
+
+62 
+RP
+ * 
+phód
+=(RP*)
+	`mÆloc
+(
+RP_SAVE_SIZE
+);
+
+63 
+RP
+ * 
+±mp
+=
+phód
+;
+
+64 
+	`f£ek
+(
+Â
+,(
+GINFO
+),
+SEEK_SET
+);
+
+65 if(
+±mp
+==
+NULL
+)
+
+67 
+	`exô
+(1);
+
+69 
+i
+=0;i<
+cou¡
+-1;i++)
+
+71 
+	`‰ód
+(
+±mp
+,(
+RP_SAVE_SIZE
+),1,
+Â
+);
+
+72 
+±mp
+->
+√xt
+=(
+RP
+*)
+	`mÆloc
+(
+RP_SAVE_SIZE
+);
+
+73 if(
+±mp
+->
+√xt
+==
+NULL
+)
+
+75 
+	`Ârötf
+(
+°dîr
+,"memoryállocationÉrror!\n");
+
+76 
+	`exô
+(1);
+
+78 
+±mp
+ıtmp->
+√xt
+;
+
+80 
+	`‰ód
+(
+±mp
+,(
+RP_SAVE_SIZE
+),1,
+Â
+);
+
+81 
+±mp
+->
+√xt
+=
+NULL
+;
+
+82  
+phód
+;
+
+83 
+	}
+}
+
+88 
+	$ßve_Æl
+(
+FILE
+ *
+Â
+,
+GINFO
+* 
+pgöfo
+)
+
+90 if(
+Â
+==
+NULL
+)
+
+94 
+	`f£ek
+(
+Â
+,0,
+SEEK_SET
+);
+
+95 if(
+	`fwrôe
+(
+pgöfo
+,(
+GINFO
+),1,
+Â
+)!=1)
+
+97 
+	`Ârötf
+(
+°dîr
+,"save fileÉrror!\n");
+
+98 
+	`exô
+(1);
+
+100 
+	}
+}
+
+104 
+ßve_em∂oyìs
+(
+FILE
+ *
+Â
+,
+EMPLOYEE
+*);
+
+108 
+	$ßve_ªw¨dpunish
+(
+FILE
+ *
+Â
+,
+RP
+* 
+¥p
+)
+
+111 
+	}
+}
+
+	@fileop.h
+
+1 #i‚de‡
+_FILEOP_H
+
+
+2 
+	#_FILEOP_H
+
+
+	)
+
+4 
+	~<°dio.h
+>
+
+5 
+	~"globÆ.h
+"
+
+6 
+	~"em∂oyì.h
+"
+
+7 
+GINFO
+ *
+lﬂd_Æl
+(
+FILE
+ *
+Â
+);
+
+8 
+EMPLOYEE
+ *
+lﬂd_em∂oyìs
+(
+FILE
+ *
+Â
+,
+cou¡
+);
+
+9 
+RP
+ *
+lﬂd_ªw¨dpunish
+(
+FILE
+ *
+Â
+,
+cou¡
+);
+
+11 
+ßve_Æl
+(
+FILE
+ *
+Â
+,
+GINFO
+* 
+pgöfo
+);
+
+12 
+ßve_em∂oyìs
+(
+FILE
+ *
+Â
+,
+EMPLOYEE
+*);
+
+13 
+ßve_ªw¨dpunish
+(
+FILE
+ *
+Â
+,
+RP
+*);
+
+	@global.h
+
+1 
+	~"em∂oyì.h
+"
+
+2 
+	sglobÆ_öfo
+
+
+4 
+EMPLOYEE
+ *
+	mem_hód
+;
+
+5 }
+	tGINFO
+;
+
+	@init.c
+
+4 
+	$öô_sys
+()
+
+6 
+FILE
+ *
+Âem
+;
+
+7 
+FILE
+ *
+ÂΩ
+;
+
+8 if(
+	`öô_fûes
+(&
+Âem
+,&
+ÂΩ
+)==0)
+
+12 
+	}
+}
+
+16 
+	$öô_fûes
+(
+FILE
+ **
+Âem
+,FILE **
+Âª
+)
+
+18 
+FILE
+ *
+Â_em∂oyì
+=
+NULL
+;
+
+19 
+FILE
+ *
+Â_ªw¨dpunish
+=
+NULL
+;
+
+20 
+Â_em∂oyì
+=
+	`f›í
+("../data/emdata","rb");
+
+21 
+Â_ªw¨dpunish
+=
+	`f›í
+("../data/rpdata","rb");
+
+22 if((
+Â_em∂oyì
+==
+NULL
+Ë|| (
+Â_ªw¨dpunish
+==NULL))
+
+24 
+Â_em∂oyì
+=
+	`f›í
+("../data/emdata","wb+");
+
+25 if(
+Â_em∂oyì
+==
+NULL
+)
+
+27 
+	`Ârötf
+(
+°dîr
+,"Êó†Ê≥ïÂàõÂª∫Êñá‰ª∂!\n");
+
+28 
+	`exô
+(1);
+
+30 
+Â_ªw¨dpunish
+=
+	`f›í
+("../data/rpdata","wb+");
+
+32 if(
+Â_ªw¨dpunish
+==
+NULL
+)
+
+34 
+	`Ârötf
+(
+°dîr
+,"Êó†Ê≥ïÂàõÂª∫Êñá‰ª∂!\n");
+
+35 
+	`exô
+(1);
+
+38 *
+Âem
+=
+Â_em∂oyì
+;
+
+39 *
+ÂΩ
+=
+Â_ªw¨dpunish
+;
+
+43 
+	}
+}
+
+	@menu.c
+
+1 
+	~<°dio.h
+>
+
+2 
+	~<°dlib.h
+>
+
+3 
+	$míu
+()
+
+5 
+sw
+=0;
+
+6 
+	`sy°em
+("clear");
+
+9 
+	`¥ötf
+("\t\t------------Personnel Management System-----------\n");
+
+10 
+	`¥ötf
+("\t\t1.ÂëòÂ∑•‰ø°ÊÅØÊìç‰Ωú\n");
+
+11 
+	`¥ötf
+("\t\t2.ÂëòÂ∑•Â•ñÊÉ©Êìç‰Ωú\n");
+
+12 
+	`¥ötf
+("\t\t3.ÂëòÂ∑•Â•ñÊÉ©‰ø°ÊÅØÊü•Áúã\n");
+
+13 
+	`¥ötf
+("\t\t4.ÈÄÄÂá∫\n");
+
+14 
+	`¥ötf
+("ËØ∑ËæìÂÖ•ÈÄâÈ°π:");
+
+15 
+	`sˇnf
+("%d",&
+sw
+)==0)
+
+17 
+	`¥ötf
+("ËØ∑ËæìÂÖ•Ê≠£Á°ÆÁöÑÈÄâÈ°π:");
+
+18 
+	`gëch¨
+()!='\n');
+
+20 
+sw
+)
+
+31 
+	`¥ötf
+("ËØ∑ËæìÂÖ•Ê≠£Á°ÆÁöÑÈÄâÈ°π:");
+
+36 
+	}
+}
+
+	@pms.c
+
+1 
+	~<°dio.h
+>
+
+2 
+	~"míu.h
+"
+
+4 
+	$maö
+()
+
+6 
+	`öô_sys
+();
+
+7 
+	`míu
+();
+
+9 
+	}
+}
+
+	@rewardpunish.c
+
+	@rewardpunish.h
+
+1 #i‚de‡
+_REWARDPUNISH_H
+
+
+2 
+	#_REWARDPUNISH_H
+
+
+	)
+
+4 #i‚de‡
+_RPFLAG
+
+
+5 
+	#_RPFLAG
+
+
+	)
+
+8 
+	#RP_SAVE_SIZE
+ ((
+RP
+))
+
+9 
+
+	)
+
+10 
+	sªw¨d_punish
+
+
+12 
+	mid
+;
+
+13 #ifde‡
+_RPFLAG
+
+
+14 
+	mΩÊag
+;
+
+16 
+	mm⁄ey
+;
+
+17 
+	md©a
+;
+
+18 
+	mdes¸ùti⁄
+[128];
+
+19 
+ªw¨d_punish
+* 
+	m√xt
+;
+
+20 }
+	tRP
+;
+
+	@
+1
+.
+0
+10
+99
+employee.c
+employee.h
+fileop.c
+fileop.h
+global.h
+init.c
+menu.c
+pms.c
+rewardpunish.c
+rewardpunish.h

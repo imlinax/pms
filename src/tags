@@ -1,0 +1,61 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+EMPLOYEE	employee.h	/^}EMPLOYEE;$/;"	t	typeref:struct:employee
+EMP_SAVE_SIZE	employee.h	4;"	d
+GINFO	global.h	/^}GINFO;$/;"	t	typeref:struct:global_info
+OBJ	Makefile	/^OBJ:=employee.o menu.o pms.o rewardpunish.o$/;"	m
+RP	rewardpunish.h	/^}RP;$/;"	t	typeref:struct:reward_punish
+RP_SAVE_SIZE	rewardpunish.h	8;"	d
+_EMPLOYEES_H	employee.h	2;"	d
+_FILEOP_H	fileop.h	2;"	d
+_REWARDPUNISH_H	rewardpunish.h	2;"	d
+_RPFLAG	rewardpunish.h	5;"	d
+data	rewardpunish.h	/^	char data;\/\/日期$/;"	m	struct:reward_punish	access:public
+description	rewardpunish.h	/^	char description[128];\/\/描述$/;"	m	struct:reward_punish	access:public
+em_head	global.h	/^	EMPLOYEE *em_head;	$/;"	m	struct:global_info	access:public
+employee	employee.h	/^typedef struct employee$/;"	s
+employee::id	employee.h	/^	int  id;\/\/工号$/;"	m	struct:employee	access:public
+employee::name	employee.h	/^	char name[32];\/\/姓名$/;"	m	struct:employee	access:public
+employee::next	employee.h	/^	struct employee* next;\/\/指向下一个员工$/;"	m	struct:employee	typeref:struct:employee::employee	access:public
+employee::online	employee.h	/^	int online;\/\/标志是否还在公司工作$/;"	m	struct:employee	access:public
+employee::salay	employee.h	/^	int  salay;\/\/基本薪资$/;"	m	struct:employee	access:public
+employee::title	employee.h	/^	char title;\/\/职称$/;"	m	struct:employee	access:public
+global_info	global.h	/^typedef struct global_info$/;"	s
+global_info::em_head	global.h	/^	EMPLOYEE *em_head;	$/;"	m	struct:global_info	access:public
+id	employee.h	/^	int  id;\/\/工号$/;"	m	struct:employee	access:public
+id	rewardpunish.h	/^	int id;\/\/工号$/;"	m	struct:reward_punish	access:public
+init_files	init.c	/^int init_files(FILE **fpem,FILE **fpre)$/;"	f	signature:(FILE **fpem,FILE **fpre)
+init_sys	init.c	/^int init_sys()$/;"	f
+load_all	fileop.c	/^GINFO	 *load_all(FILE *fp)$/;"	f	signature:(FILE *fp)
+load_all	fileop.h	/^GINFO	 *load_all(FILE *fp);\/\/加载存在文件中的所有信息$/;"	p	signature:(FILE *fp)
+load_employees	fileop.c	/^EMPLOYEE *load_employees(FILE *fp,int count)$/;"	f	signature:(FILE *fp,int count)
+load_employees	fileop.h	/^EMPLOYEE *load_employees(FILE *fp,int count);\/\/加载count个员工$/;"	p	signature:(FILE *fp,int count)
+load_rewardpunish	fileop.c	/^RP *load_rewardpunish(FILE *fp,int count)$/;"	f	signature:(FILE *fp,int count)
+load_rewardpunish	fileop.h	/^RP	 *load_rewardpunish(FILE *fp,int count);\/\/加载count条奖惩记录$/;"	p	signature:(FILE *fp,int count)
+main	pms.c	/^int main()$/;"	f
+menu	menu.c	/^void menu()$/;"	f
+money	rewardpunish.h	/^	int money;\/\/奖惩多少钱,正数为奖,负数为惩$/;"	m	struct:reward_punish	access:public
+name	employee.h	/^	char name[32];\/\/姓名$/;"	m	struct:employee	access:public
+next	employee.h	/^	struct employee* next;\/\/指向下一个员工$/;"	m	struct:employee	typeref:struct:employee::employee	access:public
+next	rewardpunish.h	/^	struct reward_punish* next;\/\/指向下一条奖惩信息$/;"	m	struct:reward_punish	typeref:struct:reward_punish::reward_punish	access:public
+online	employee.h	/^	int online;\/\/标志是否还在公司工作$/;"	m	struct:employee	access:public
+reward_punish	rewardpunish.h	/^typedef struct reward_punish$/;"	s
+reward_punish::data	rewardpunish.h	/^	char data;\/\/日期$/;"	m	struct:reward_punish	access:public
+reward_punish::description	rewardpunish.h	/^	char description[128];\/\/描述$/;"	m	struct:reward_punish	access:public
+reward_punish::id	rewardpunish.h	/^	int id;\/\/工号$/;"	m	struct:reward_punish	access:public
+reward_punish::money	rewardpunish.h	/^	int money;\/\/奖惩多少钱,正数为奖,负数为惩$/;"	m	struct:reward_punish	access:public
+reward_punish::next	rewardpunish.h	/^	struct reward_punish* next;\/\/指向下一条奖惩信息$/;"	m	struct:reward_punish	typeref:struct:reward_punish::reward_punish	access:public
+reward_punish::rpflag	rewardpunish.h	/^	int rpflag;$/;"	m	struct:reward_punish	access:public
+rpflag	rewardpunish.h	/^	int rpflag;$/;"	m	struct:reward_punish	access:public
+salay	employee.h	/^	int  salay;\/\/基本薪资$/;"	m	struct:employee	access:public
+save_all	fileop.c	/^int save_all(FILE *fp,GINFO* pginfo)$/;"	f	signature:(FILE *fp,GINFO* pginfo)
+save_all	fileop.h	/^int save_all(FILE *fp,GINFO* pginfo);\/\/存储所有信息到文件中$/;"	p	signature:(FILE *fp,GINFO* pginfo)
+save_employees	fileop.c	/^int save_employees(FILE *fp,EMPLOYEE*);$/;"	p	file:	signature:(FILE *fp,EMPLOYEE*)
+save_employees	fileop.h	/^int save_employees(FILE *fp,EMPLOYEE*);\/\/存储所有员工信息到文件中$/;"	p	signature:(FILE *fp,EMPLOYEE*)
+save_rewardpunish	fileop.c	/^int save_rewardpunish(FILE *fp,RP* prp)$/;"	f	signature:(FILE *fp,RP* prp)
+save_rewardpunish	fileop.h	/^int save_rewardpunish(FILE *fp,RP*);\/\/存储所有奖惩记录$/;"	p	signature:(FILE *fp,RP*)
+title	employee.h	/^	char title;\/\/职称$/;"	m	struct:employee	access:public

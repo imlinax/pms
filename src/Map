@@ -1,0 +1,9 @@
+	.=struct gloable_info gi;
+	.=employees{
+		...
+	}
+	.=reward_punishs
+	{
+		...
+	}
+	.=end
