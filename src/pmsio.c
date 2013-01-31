@@ -7,10 +7,17 @@ EMPLOYEE *input_one_employee()
 	EMPLOYEE* pem=(EMPLOYEE*)malloc(sizeof(EMPLOYEE));
 	printf("请输入员工姓名:");
 	scanf("%31s",pem->name);
-	printf("员工职称\n1.初级\t2.高级\t3.高级\n请选择:");
-	while(scanf("%d",&title)==0)
+	printf("员工职称\n1.初级\t2.中级\t3.高级\n请选择:");
+	while(scanf("%d",&title))
 	{
-		printf("请输入正确选项:");
+		if((title>3) || (title<0))
+		{
+			printf("请输入正确选项:");
+		}
+		else
+		{
+			break;
+		}
 	}
 	pem->title=title;
 	pem->salay=1000*title;

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "employee.h"
 int emid=0;
 void show_all_eminfo(EMPLOYEE* em_head)
@@ -13,7 +14,10 @@ void show_all_eminfo(EMPLOYEE* em_head)
 	}
 	while(ptmp!=NULL)
 	{
-		show_employee(ptmp);
+		if((ptmp->online==1))
+		{
+			show_employee(ptmp);
+		}
 		ptmp=ptmp->next;
 	}
 	setbuf(stdin,NULL);
@@ -73,4 +77,23 @@ int get_employee_count(EMPLOYEE* em_head)
 		ptmp=ptmp->next;
 	}
 	return count;
+}
+int delete_em_by_id(EMPLOYEE* em_head,int id)
+{
+	EMPLOYEE* ptemp=em_head;
+	if(ptemp==NULL)
+	{
+		fprintf(stderr,"employee list error\n");
+		exit(1);
+	}
+	while(ptemp->next!=NULL)
+	{
+		if(ptemp->next->id==id)
+		{
+			ptemp->next->online=0;	
+			return 1;
+		}
+		ptemp=ptemp->next;
+	}
+	return 0;
 }

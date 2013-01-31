@@ -20,9 +20,14 @@ _REWARDPUNISH_H	rewardpunish.h	2;"	d
 _RPFLAG	rewardpunish.h	5;"	d
 add_employee	employee.c	/^int add_employee(EMPLOYEE *em_head,EMPLOYEE *pem)$/;"	f	signature:(EMPLOYEE *em_head,EMPLOYEE *pem)
 data	rewardpunish.h	/^	char data;\/\/日期$/;"	m	struct:reward_punish	access:public
+delete_em	menu.c	/^int delete_em(EMPLOYEE* em_head)$/;"	f	signature:(EMPLOYEE* em_head)
+delete_em_by_id	employee.c	/^int delete_em_by_id(EMPLOYEE* em_head,int id)$/;"	f	signature:(EMPLOYEE* em_head,int id)
+delete_em_by_id	employee.h	/^int delete_em_by_id(EMPLOYEE* em_head,int id);$/;"	p	signature:(EMPLOYEE* em_head,int id)
 description	rewardpunish.h	/^	char description[128];\/\/描述$/;"	m	struct:reward_punish	access:public
 em_count	global.h	/^	int em_count;\/\/保存所有员工数$/;"	m	struct:global_info	access:public
 em_head	global.h	/^	EMPLOYEE *em_head;\/\/	$/;"	m	struct:global_info	access:public
+emid	employee.c	/^int emid=0;$/;"	v
+emid	global.h	/^	int emid;$/;"	m	struct:global_info	access:public
 employee	employee.h	/^typedef struct employee$/;"	s
 employee::id	employee.h	/^	int  id;\/\/工号$/;"	m	struct:employee	access:public
 employee::name	employee.h	/^	char name[32];\/\/姓名$/;"	m	struct:employee	access:public
@@ -35,6 +40,7 @@ get_employee_count	employee.h	/^int get_employee_count(EMPLOYEE* em_head);$/;"	p
 global_info	global.h	/^typedef struct global_info$/;"	s
 global_info::em_count	global.h	/^	int em_count;\/\/保存所有员工数$/;"	m	struct:global_info	access:public
 global_info::em_head	global.h	/^	EMPLOYEE *em_head;\/\/	$/;"	m	struct:global_info	access:public
+global_info::emid	global.h	/^	int emid;$/;"	m	struct:global_info	access:public
 global_info::rp_count	global.h	/^	int rp_count;\/\/保存奖惩记录数$/;"	m	struct:global_info	access:public
 global_info::rp_head	global.h	/^	RP	 *rp_head;$/;"	m	struct:global_info	access:public
 id	employee.h	/^	int  id;\/\/工号$/;"	m	struct:employee	access:public

@@ -82,6 +82,10 @@ int op_eminfo(EMPLOYEE* em_head)
 			}
 			break;
 		case 3:
+			if(delete_em(em_head)==1)
+			{
+				dirtydata=1;
+			}
 			break;
 		case 4:
 			if(dirtydata==1)
@@ -93,6 +97,7 @@ int op_eminfo(EMPLOYEE* em_head)
 					exit(0);
 				}
 				save_employees(fpem,em_head);
+				dirtydata=0;
 				fclose(fpem);
 			}
 			return;
@@ -103,4 +108,13 @@ int op_eminfo(EMPLOYEE* em_head)
 	}
 	return 0;
 }
-
+int delete_em(EMPLOYEE* em_head)
+{
+	int id=0;
+	printf("请输入要删除员工的员工号:");
+	while(scanf("%d",&id)==0)
+	{
+		printf("请输入要删除员工的员工号:");
+	}
+	return delete_em_by_id(em_head,id);
+}

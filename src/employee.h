@@ -2,6 +2,7 @@
 #define _EMPLOYEES_H
 
 #define EMP_SAVE_SIZE (sizeof(EMPLOYEE)-sizeof(EMPLOYEE*))
+
 typedef struct employee
 {
 	int  id;//工号
@@ -12,9 +13,10 @@ typedef struct employee
 	struct employee* next;//指向下一个员工
 }EMPLOYEE;
 
-void show_all_eminfo(EMPLOYEE* em_head);
+void show_all_eminfo(EMPLOYEE* em_head);//显示所有在职人员信息
 void show_employee(EMPLOYEE* pem);
 int get_employee_count(EMPLOYEE* em_head);
+int delete_em_by_id(EMPLOYEE* em_head,int id);
 
 extern int emid;
 
