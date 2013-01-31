@@ -8,6 +8,7 @@ typedef struct global_info
 	int rp_count;//保存奖惩记录数
 	EMPLOYEE *em_head;//	
 	RP	 *rp_head;
+	int emid;
 
 }GINFO;
 

@@ -15,6 +15,7 @@ GINFO* init_sys()
 	pginfo->rp_count=0;
 	pginfo->em_head=NULL;
 	pginfo->rp_head=NULL;
+	pginfo->emid=0;
 	if(init_files(&fpem,&fprp)==0)
 	{
 		save_all(fpem,pginfo);
@@ -24,6 +25,7 @@ GINFO* init_sys()
 	//	return 0;
 	}
 	pginfo=load_all(fpem,fprp);
+	emid=pginfo->emid;
 	fclose(fpem);
 	fclose(fprp);
 	return pginfo;

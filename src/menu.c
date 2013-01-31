@@ -37,6 +37,7 @@ void menu(GINFO *pginfo)
 				exit(0);
 			}
 			pginfo->em_count=get_employee_count(pginfo->em_head);
+			pginfo->emid=emid;
 			save_all(fpem,pginfo);
 			fclose(fpem);
 			return ;	
@@ -66,7 +67,7 @@ int op_eminfo(EMPLOYEE* em_head)
 		while(scanf("%d",&sw)==0)
 		{
 			printf("请输入正确的选项:");
-			while(getchar()!='\n');
+			setbuf(stdin,NULL);
 		}
 		switch(sw)
 		{

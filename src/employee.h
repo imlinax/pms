@@ -16,7 +16,7 @@ void show_all_eminfo(EMPLOYEE* em_head);
 void show_employee(EMPLOYEE* pem);
 int get_employee_count(EMPLOYEE* em_head);
 
-
+extern int emid;
 
 
 #endif

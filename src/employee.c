@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "employee.h"
+int emid=0;
 void show_all_eminfo(EMPLOYEE* em_head)
 {
 	EMPLOYEE* ptmp=em_head->next;
@@ -15,6 +16,8 @@ void show_all_eminfo(EMPLOYEE* em_head)
 		show_employee(ptmp);
 		ptmp=ptmp->next;
 	}
+	setbuf(stdin,NULL);
+	getchar();
 	return ;
 }
 void show_employee(EMPLOYEE* pem)
@@ -67,6 +70,7 @@ int get_employee_count(EMPLOYEE* em_head)
 	while(ptmp->next!=NULL)	
 	{
 		count++;
+		ptmp=ptmp->next;
 	}
 	return count;
 }

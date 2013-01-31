@@ -28,15 +28,16 @@ GINFO	 *load_all(FILE *fpem,FILE *fprp)
 EMPLOYEE *load_employees(FILE *fp,int count)
 {
 	int i=0;
-	if(count<1)
-	{
-		return NULL;
-	}
+//	if(count<1)
+//	{
+//		return NULL;
+//	}
 	EMPLOYEE* phead=(EMPLOYEE*)calloc(1,EMP_SAVE_SIZE);
 	EMPLOYEE* ptmp=phead;
 	fseek(fp,sizeof(GINFO),SEEK_SET);
 	if(phead==NULL)
 	{
+		fprintf(stderr,"memory allocation error!\n");
 		exit(1);
 	}
 	for(i=0;i<count;i++)
@@ -47,7 +48,7 @@ EMPLOYEE *load_employees(FILE *fp,int count)
 			fprintf(stderr,"memory allocation error!\n");
 			exit(1);
 		}
-		fread(ptmp->next,sizeof(EMP_SAVE_SIZE),1,fp);
+		fread(ptmp->next,EMP_SAVE_SIZE,1,fp);
 		ptmp=ptmp->next;
 	}
 	ptmp->next=NULL;
@@ -115,11 +116,12 @@ int save_employees(FILE *fp,EMPLOYEE* em_head)
 	fseek(fp,sizeof(GINFO),SEEK_SET);
 	while(pem!=NULL)
 	{
-		if(fwrite(pem,sizeof(EMP_SAVE_SIZE),1,fp)!=1)
+		if(fwrite(pem,EMP_SAVE_SIZE,1,fp)!=1)
 		{
 			fprintf(stderr,"save file error!\n");
 			exit(0);
 		}
+		pem=pem->next;
 	}
 	return 1;
 }
