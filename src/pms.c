@@ -4,7 +4,8 @@
 
 int main()
 {
-	init_sys();
-	menu();
+	GINFO *pginfo=NULL;
+	pginfo=init_sys();
+	menu(pginfo);
 	return 0;
 }

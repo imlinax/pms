@@ -3,19 +3,22 @@
 #include "employee.h"
 #include "rewardpunish.h"
 #include "global.h"
+#include "fileop.h"
 /*
 *加载存在文件中的所有信息
 */
-GINFO	 *load_all(FILE *fpem,FILE *fpep)
+GINFO	 *load_all(FILE *fpem,FILE *fprp)
 {
 	GINFO *pginfo=(GINFO*)malloc(sizeof(GINFO));
+	fseek(fpem,0,SEEK_SET);
+	fseek(fprp,0,SEEK_SET);
 	if(fread(pginfo,sizeof(GINFO),1,fpem)<1)
 	{
 		fprintf(stderr,"加载配置文件失败!\n");
 		exit(1);
 	}
 	pginfo->em_head=load_employees(fpem,pginfo->em_count);
-	pginfo->rm_head=load_rewardpunish(fprp,pginfo->rp_count);
+	pginfo->rp_head=load_rewardpunish(fprp,pginfo->rp_count);
 
 	return pginfo;
 }/*

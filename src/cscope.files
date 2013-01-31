@@ -1,9 +1,12 @@
 ./pms.c
 ./global.h
 ./employee.c
+./init.h
 ./fileop.h
 ./rewardpunish.c
+./In file included from init.c
 ./init.c
+./menu.h
 ./rewardpunish.h
 ./fileop.c
 ./employee.h

@@ -10,21 +10,23 @@ GINFO* init_sys()
 {
 	FILE *fpem;
 	FILE *fprp;
-	GINFO pginfo=(GINFO *)malloc(sizeof(GINFO));
+	GINFO* pginfo=(GINFO *)malloc(sizeof(GINFO));
 	pginfo->em_count=0;
 	pginfo->rp_count=0;
 	pginfo->em_head=NULL;
 	pginfo->rp_head=NULL;
 	if(init_files(&fpem,&fprp)==0)
 	{
-		save_all(fpem,&ginfo);
-		save_all(fprp,&ginfo);
+		save_all(fpem,pginfo);
+		save_all(fprp,pginfo);
 //		fclose(fpem);
 //		fclose(fprp);
 	//	return 0;
 	}
-	pginfo=load_all(fpem);
-	return load_all(fpem);
+	pginfo=load_all(fpem,fprp);
+	fclose(fpem);
+	fclose(fprp);
+	return pginfo;
 }
 /*
 *找不到文件返回0,找到文件返回1
@@ -55,5 +57,8 @@ int init_files(FILE **fpem,FILE **fprp)
 		*fprp=fp_rewardpunish;
 		return 0;
 	}
+	*fpem=fp_employee;
+	*fprp=fp_rewardpunish;
+
 	return 1;
 }

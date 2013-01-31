@@ -1,3 +1,4 @@
 #include <stdio.h>
-int init_sys();
+#include "global.h"
+GINFO* init_sys();
 int init_files(FILE**,FILE**);

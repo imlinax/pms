@@ -1,4 +1,4 @@
-cscope 15 $HOME/develop/c/pms/src -q 0000000067 0000004307
+cscope 15 $HOME/develop/c/pms/src -q 0000000079 0000007737
 	@employee.c
 
 	@employee.h
@@ -35,7 +35,7 @@ EMPLOYEE
 
 9 
 	mtôÀ
-;
+[16];
 
 10 
 	mßœy
@@ -77,17 +77,23 @@ em∂oyì
 	~"globÆ.h
 "
 
-9 
+6 
+	~"fûe›.h
+"
+
+10 
 GINFO
  *
 	$lﬂd_Æl
 (
 FILE
  *
-Â
+Âem
+,FILE *
+ÂΩ
 )
 
-11 
+12 
 GINFO
  *
 pgöfo
@@ -95,35 +101,75 @@ pgöfo
 	`mÆloc
 ((GINFO));
 
-12 if(
+13 
+	`f£ek
+(
+Âem
+,0,
+SEEK_SET
+);
+
+14 
+	`f£ek
+(
+ÂΩ
+,0,
+SEEK_SET
+);
+
+15 if(
 	`‰ód
 (
 pgöfo
 ,(
 GINFO
 ),1,
-Â
+Âem
 )<1)
 
-14 
+17 
 	`Ârötf
 (
 °dîr
 ,"Âä†ËΩΩÈÖçÁΩÆÊñá‰ª∂Â§±Ë¥•!\n");
 
-15 
+18 
 	`exô
 (1);
 
-17  
+20 
+pgöfo
+->
+em_hód
+=
+	`lﬂd_em∂oyìs
+(
+Âem
+,pgöfo->
+em_cou¡
+);
+
+21 
+pgöfo
+->
+Ω_hód
+=
+	`lﬂd_ªw¨dpunish
+(
+ÂΩ
+,pgöfo->
+Ω_cou¡
+);
+
+23  
 pgöfo
 ;
 
-18 
+24 
 	}
 }
 
-23 
+28 
 EMPLOYEE
  *
 	$lﬂd_em∂oyìs
@@ -135,19 +181,19 @@ FILE
 cou¡
 )
 
-25 
+30 
 i
 =0;
 
-26 if(
+31 if(
 cou¡
 <1)
 
-28  
+33  
 NULL
 ;
 
-30 
+35 
 EMPLOYEE
 * 
 phód
@@ -157,7 +203,7 @@ phód
 EMP_SAVE_SIZE
 );
 
-31 
+36 
 EMPLOYEE
 * 
 ±mp
@@ -165,7 +211,7 @@ EMPLOYEE
 phód
 ;
 
-32 
+37 
 	`f£ek
 (
 Â
@@ -175,23 +221,23 @@ GINFO
 SEEK_SET
 );
 
-33 if(
+38 if(
 ±mp
 ==
 NULL
 )
 
-35 
+40 
 	`exô
 (1);
 
-37 
+42 
 i
 =0;i<
 cou¡
 -1;i++)
 
-39 
+44 
 	`‰ód
 (
 ±mp
@@ -201,7 +247,7 @@ EMP_SAVE_SIZE
 Â
 );
 
-40 
+45 
 ±mp
 ->
 √xt
@@ -213,7 +259,7 @@ EMPLOYEE
 EMP_SAVE_SIZE
 );
 
-41 if(
+46 if(
 ±mp
 ->
 √xt
@@ -221,23 +267,23 @@ EMP_SAVE_SIZE
 NULL
 )
 
-43 
+48 
 	`Ârötf
 (
 °dîr
 ,"memoryállocationÉrror!\n");
 
-44 
+49 
 	`exô
 (1);
 
-46 
+51 
 ±mp
 ıtmp->
 √xt
 ;
 
-48 
+53 
 	`‰ód
 (
 ±mp
@@ -247,7 +293,7 @@ EMP_SAVE_SIZE
 Â
 );
 
-49 
+54 
 ±mp
 ->
 √xt
@@ -255,15 +301,15 @@ EMP_SAVE_SIZE
 NULL
 ;
 
-50  
+55  
 phód
 ;
 
-51 
+56 
 	}
 }
 
-55 
+60 
 RP
  *
 	$lﬂd_ªw¨dpunish
@@ -275,19 +321,19 @@ FILE
 cou¡
 )
 
-57 
+62 
 i
 =0;
 
-58 if(
+63 if(
 cou¡
 <1)
 
-60  
+65  
 NULL
 ;
 
-62 
+67 
 RP
  * 
 phód
@@ -297,7 +343,7 @@ phód
 RP_SAVE_SIZE
 );
 
-63 
+68 
 RP
  * 
 ±mp
@@ -305,7 +351,7 @@ RP
 phód
 ;
 
-64 
+69 
 	`f£ek
 (
 Â
@@ -315,23 +361,23 @@ GINFO
 SEEK_SET
 );
 
-65 if(
+70 if(
 ±mp
 ==
 NULL
 )
 
-67 
+72 
 	`exô
 (1);
 
-69 
+74 
 i
 =0;i<
 cou¡
 -1;i++)
 
-71 
+76 
 	`‰ód
 (
 ±mp
@@ -341,7 +387,7 @@ RP_SAVE_SIZE
 Â
 );
 
-72 
+77 
 ±mp
 ->
 √xt
@@ -353,7 +399,7 @@ RP
 RP_SAVE_SIZE
 );
 
-73 if(
+78 if(
 ±mp
 ->
 √xt
@@ -361,23 +407,23 @@ RP_SAVE_SIZE
 NULL
 )
 
-75 
+80 
 	`Ârötf
 (
 °dîr
 ,"memoryállocationÉrror!\n");
 
-76 
+81 
 	`exô
 (1);
 
-78 
+83 
 ±mp
 ıtmp->
 √xt
 ;
 
-80 
+85 
 	`‰ód
 (
 ±mp
@@ -387,7 +433,7 @@ RP_SAVE_SIZE
 Â
 );
 
-81 
+86 
 ±mp
 ->
 √xt
@@ -395,15 +441,15 @@ RP_SAVE_SIZE
 NULL
 ;
 
-82  
+87  
 phód
 ;
 
-83 
+88 
 	}
 }
 
-88 
+93 
 	$ßve_Æl
 (
 FILE
@@ -415,13 +461,13 @@ GINFO
 pgöfo
 )
 
-90 if(
+95 if(
 Â
 ==
 NULL
 )
 
-94 
+99 
 	`f£ek
 (
 Â
@@ -429,7 +475,7 @@ NULL
 SEEK_SET
 );
 
-95 if(
+100 if(
 	`fwrôe
 (
 pgöfo
@@ -439,21 +485,21 @@ GINFO
 Â
 )!=1)
 
-97 
+102 
 	`Ârötf
 (
 °dîr
 ,"save fileÉrror!\n");
 
-98 
+103 
 	`exô
 (1);
 
-100 
+105 
 	}
 }
 
-104 
+109 
 ßve_em∂oyìs
 (
 FILE
@@ -463,7 +509,7 @@ FILE
 EMPLOYEE
 *);
 
-108 
+113 
 	$ßve_ªw¨dpunish
 (
 FILE
@@ -475,7 +521,7 @@ RP
 ¥p
 )
 
-111 
+116 
 	}
 }
 
@@ -510,7 +556,9 @@ lﬂd_Æl
 (
 FILE
  *
-Â
+Âem
+,FILE*
+ÂΩ
 );
 
 8 
@@ -591,23 +639,81 @@ EMPLOYEE
 
 	@init.c
 
-4 
+1 
+	~<°dlib.h
+>
+
+2 
+	~<°dio.h
+>
+
+3 
+	~"globÆ.h
+"
+
+4 
+	~"fûe›.h
+"
+
+5 
+	~"öô.h
+"
+
+9 
+GINFO
+* 
 	$öô_sys
 ()
 
-6 
+11 
 FILE
  *
 Âem
 ;
 
-7 
+12 
 FILE
  *
 ÂΩ
 ;
 
-8 if(
+13 
+GINFO
+* 
+pgöfo
+=(GINFO *)
+	`mÆloc
+((GINFO));
+
+14 
+pgöfo
+->
+em_cou¡
+=0;
+
+15 
+pgöfo
+->
+Ω_cou¡
+=0;
+
+16 
+pgöfo
+->
+em_hód
+=
+NULL
+;
+
+17 
+pgöfo
+->
+Ω_hód
+=
+NULL
+;
+
+18 if(
 	`öô_fûes
 (&
 Âem
@@ -615,21 +721,63 @@ FILE
 ÂΩ
 )==0)
 
-12 
+20 
+	`ßve_Æl
+(
+Âem
+,
+pgöfo
+);
+
+21 
+	`ßve_Æl
+(
+ÂΩ
+,
+pgöfo
+);
+
+26 
+pgöfo
+=
+	`lﬂd_Æl
+(
+Âem
+,
+ÂΩ
+);
+
+27 
+	`f˛o£
+(
+Âem
+);
+
+28 
+	`f˛o£
+(
+ÂΩ
+);
+
+29  
+pgöfo
+;
+
+30 
 	}
 }
 
-16 
+34 
 	$öô_fûes
 (
 FILE
  **
 Âem
 ,FILE **
-Âª
+ÂΩ
 )
 
-18 
+36 
 FILE
  *
 Â_em∂oyì
@@ -637,7 +785,7 @@ FILE
 NULL
 ;
 
-19 
+37 
 FILE
  *
 Â_ªw¨dpunish
@@ -645,19 +793,19 @@ FILE
 NULL
 ;
 
-20 
+38 
 Â_em∂oyì
 =
 	`f›í
 ("../data/emdata","rb");
 
-21 
+39 
 Â_ªw¨dpunish
 =
 	`f›í
 ("../data/rpdata","rb");
 
-22 if((
+40 if((
 Â_em∂oyì
 ==
 NULL
@@ -665,137 +813,683 @@ NULL
 Â_ªw¨dpunish
 ==NULL))
 
-24 
+42 
 Â_em∂oyì
 =
 	`f›í
 ("../data/emdata","wb+");
 
-25 if(
+43 if(
 Â_em∂oyì
 ==
 NULL
 )
 
-27 
+45 
 	`Ârötf
 (
 °dîr
 ,"Êó†Ê≥ïÂàõÂª∫Êñá‰ª∂!\n");
 
-28 
+46 
 	`exô
 (1);
 
-30 
+48 
 Â_ªw¨dpunish
 =
 	`f›í
 ("../data/rpdata","wb+");
 
-32 if(
+50 if(
 Â_ªw¨dpunish
 ==
 NULL
 )
 
-34 
+52 
 	`Ârötf
 (
 °dîr
 ,"Êó†Ê≥ïÂàõÂª∫Êñá‰ª∂!\n");
 
-35 
+53 
 	`exô
 (1);
 
-38 *
+56 *
 Âem
 =
 Â_em∂oyì
 ;
 
-39 *
+57 *
 ÂΩ
 =
 Â_ªw¨dpunish
 ;
 
-43 
+60 *
+Âem
+=
+Â_em∂oyì
+;
+
+61 *
+ÂΩ
+=
+Â_ªw¨dpunish
+;
+
+64 
 	}
 }
 
-	@menu.c
+	@init.c
+
+1 
+	~<°dlib.h
+>
+
+2 
+	~<°dio.h
+>
+
+3 
+	~"globÆ.h
+"
+
+4 
+	~"fûe›.h
+"
+
+5 
+	~"öô.h
+"
+
+9 
+GINFO
+* 
+	$öô_sys
+()
+
+11 
+FILE
+ *
+Âem
+;
+
+12 
+FILE
+ *
+ÂΩ
+;
+
+13 
+GINFO
+* 
+pgöfo
+=(GINFO *)
+	`mÆloc
+((GINFO));
+
+14 
+pgöfo
+->
+em_cou¡
+=0;
+
+15 
+pgöfo
+->
+Ω_cou¡
+=0;
+
+16 
+pgöfo
+->
+em_hód
+=
+NULL
+;
+
+17 
+pgöfo
+->
+Ω_hód
+=
+NULL
+;
+
+18 if(
+	`öô_fûes
+(&
+Âem
+,&
+ÂΩ
+)==0)
+
+20 
+	`ßve_Æl
+(
+Âem
+,
+pgöfo
+);
+
+21 
+	`ßve_Æl
+(
+ÂΩ
+,
+pgöfo
+);
+
+26 
+pgöfo
+=
+	`lﬂd_Æl
+(
+Âem
+,
+ÂΩ
+);
+
+27 
+	`f˛o£
+(
+Âem
+);
+
+28 
+	`f˛o£
+(
+ÂΩ
+);
+
+29  
+pgöfo
+;
+
+30 
+	}
+}
+
+34 
+	$öô_fûes
+(
+FILE
+ **
+Âem
+,FILE **
+ÂΩ
+)
+
+36 
+FILE
+ *
+Â_em∂oyì
+=
+NULL
+;
+
+37 
+FILE
+ *
+Â_ªw¨dpunish
+=
+NULL
+;
+
+38 
+Â_em∂oyì
+=
+	`f›í
+("../data/emdata","rb");
+
+39 
+Â_ªw¨dpunish
+=
+	`f›í
+("../data/rpdata","rb");
+
+40 if((
+Â_em∂oyì
+==
+NULL
+Ë|| (
+Â_ªw¨dpunish
+==NULL))
+
+42 
+Â_em∂oyì
+=
+	`f›í
+("../data/emdata","wb+");
+
+43 if(
+Â_em∂oyì
+==
+NULL
+)
+
+45 
+	`Ârötf
+(
+°dîr
+,"Êó†Ê≥ïÂàõÂª∫Êñá‰ª∂!\n");
+
+46 
+	`exô
+(1);
+
+48 
+Â_ªw¨dpunish
+=
+	`f›í
+("../data/rpdata","wb+");
+
+50 if(
+Â_ªw¨dpunish
+==
+NULL
+)
+
+52 
+	`Ârötf
+(
+°dîr
+,"Êó†Ê≥ïÂàõÂª∫Êñá‰ª∂!\n");
+
+53 
+	`exô
+(1);
+
+56 *
+Âem
+=
+Â_em∂oyì
+;
+
+57 *
+ÂΩ
+=
+Â_ªw¨dpunish
+;
+
+60 *
+Âem
+=
+Â_em∂oyì
+;
+
+61 *
+ÂΩ
+=
+Â_ªw¨dpunish
+;
+
+64 
+	}
+}
+
+	@init.h
 
 1 
 	~<°dio.h
 >
 
 2 
-	~<°dlib.h
->
+	~"globÆ.h
+"
 
-3 
+3 
+GINFO
+* 
+öô_sys
+();
+
+4 
+öô_fûes
+(
+FILE
+**,FILE**);
+
+	@menu.c
+
+1 
+	~"míu.h
+"
+
+2 
 	$míu
-()
+(
+GINFO
+ *
+pgöfo
+)
 
-5 
+4 
 sw
 =0;
 
-6 
+7 
 	`sy°em
 ("clear");
 
+8 
+	`¥ötf
+("------------Personnel Management System-----------\n");
+
 9 
 	`¥ötf
-("\t\t------------Personnel Management System-----------\n");
+("1.ÂëòÂ∑•‰ø°ÊÅØÊìç‰Ωú\n");
 
 10 
 	`¥ötf
-("\t\t1.ÂëòÂ∑•‰ø°ÊÅØÊìç‰Ωú\n");
+("2.ÂëòÂ∑•Â•ñÊÉ©Êìç‰Ωú\n");
 
 11 
 	`¥ötf
-("\t\t2.ÂëòÂ∑•Â•ñÊÉ©Êìç‰Ωú\n");
+("3.ËÆ°ÁÆóÂëòÂ∑•Â∑•ËµÑ\n");
 
 12 
 	`¥ötf
-("\t\t3.ÂëòÂ∑•Â•ñÊÉ©‰ø°ÊÅØÊü•Áúã\n");
+("4.ÈÄÄÂá∫\n");
 
 13 
 	`¥ötf
-("\t\t4.ÈÄÄÂá∫\n");
-
-14 
-	`¥ötf
 ("ËØ∑ËæìÂÖ•ÈÄâÈ°π:");
 
-15 
+14 
 	`sˇnf
 ("%d",&
 sw
 )==0)
 
-17 
+16 
 	`¥ötf
 ("ËØ∑ËæìÂÖ•Ê≠£Á°ÆÁöÑÈÄâÈ°π:");
 
-18 
+17 
 	`gëch¨
 ()!='\n');
 
-20 
+19 
 sw
 )
 
-31 
+22 
+	`›_emöfo
+(
+pgöfo
+->
+em_hód
+);
+
+33 
 	`¥ötf
 ("ËØ∑ËæìÂÖ•Ê≠£Á°ÆÁöÑÈÄâÈ°π:");
 
-36 
+38 
 	}
 }
+
+39 
+	$›_emöfo
+(
+EMPLOYEE
+* 
+em_hód
+)
+
+41 
+sw
+=0;
+
+44 
+	`sy°em
+("clear");
+
+45 
+	`£tbuf
+(
+°dö
+,
+NULL
+);
+
+46 
+	`¥ötf
+("***************ÂëòÂ∑•‰ø°ÊÅØÊìç‰Ωú***************\n");
+
+47 
+	`¥ötf
+("1.Êü•ÁúãÂëòÂ∑•‰ø°ÊÅØ\n");
+
+48 
+	`¥ötf
+("2.Ê∑ªÂä†ÂëòÂ∑•‰ø°ÊÅØ\n");
+
+49 
+	`¥ötf
+("3.Âà†Èô§ÂëòÂ∑•‰ø°ÊÅØ\n");
+
+50 
+	`¥ötf
+("4.ËøîÂõû‰∏äÂ±Ç\n");
+
+51 
+	`¥ötf
+("ËØ∑ËæìÂÖ•ÈÄâÈ°π:");
+
+52 
+	`sˇnf
+("%d",&
+sw
+)==0)
+
+54 
+	`¥ötf
+("ËØ∑ËæìÂÖ•Ê≠£Á°ÆÁöÑÈÄâÈ°π:");
+
+55 
+	`gëch¨
+()!='\n');
+
+57 
+sw
+)
+
+60 
+	`show_Æl_emöfo
+(
+em_hód
+);
+
+69 
+	`¥ötf
+("ËØ∑ËæìÂÖ•Ê≠£Á°ÆÁöÑÈÄâÈ°π:");
+
+74 
+	}
+}
+
+75 
+	$show_Æl_emöfo
+(
+EMPLOYEE
+* 
+em_hód
+)
+
+77 
+EMPLOYEE
+* 
+±mp
+=
+em_hód
+;
+
+78 if(
+±mp
+==
+NULL
+)
+
+80 
+	`¥ötf
+("ÊöÇÊó†ÂëòÂ∑•‰ø°ÊÅØ\n");
+
+81 
+	`£tbuf
+(
+°dö
+,
+NULL
+);
+
+82 
+	`gëch¨
+();
+
+85 
+±mp
+!=
+NULL
+)
+
+87 
+	`show_em∂oyì
+(
+±mp
+);
+
+88 
+±mp
+ıtmp->
+√xt
+;
+
+91 
+	}
+}
+
+92 
+	$show_em∂oyì
+(
+EMPLOYEE
+* 
+≥m
+)
+
+94 if(
+≥m
+==
+NULL
+)
+
+98 
+	`¥ötf
+("ID:%d\n",
+≥m
+->
+id
+);
+
+99 
+	`¥ötf
+("ÂßìÂêç:%s\n",
+≥m
+->
+«me
+);
+
+100 
+	`¥ötf
+("ËÅåÁß∞:%s\n",
+≥m
+->
+tôÀ
+);
+
+101 
+	`¥ötf
+("Âü∫Êú¨Ëñ™ËµÑ:%d",
+≥m
+->
+ßœy
+);
+
+102 if(
+≥m
+->
+⁄löe
+)
+
+104 
+	`¥ötf
+("Â∑•‰ΩúÁä∂ÊÄÅ:Âú®ËÅå\n");
+
+109 
+	`¥ötf
+("Â∑•‰ΩúÁä∂ÊÄÅ:Á¶ªËÅå\n");
+
+111 
+	}
+}
+
+	@menu.h
+
+1 #i‚de‡
+_MENU_H
+
+
+2 
+	#_MENU_H
+
+
+	)
+
+4 
+	~<°dio.h
+>
+
+5 
+	~"globÆ.h
+"
+
+6 
+míu
+(
+GINFO
+ *
+pgöfo
+);
+
+7 
+›_emöfo
+(
+EMPLOYEE
+* 
+em_hód
+);
+
+8 
+show_Æl_emöfo
+(
+EMPLOYEE
+* 
+em_hód
+);
+
+9 
+show_em∂oyì
+(
+EMPLOYEE
+* 
+≥m
+);
 
 	@pms.c
 
@@ -804,22 +1498,38 @@ sw
 >
 
 2 
+	~"öô.h
+"
+
+3 
 	~"míu.h
 "
 
-4 
+5 
 	$maö
 ()
 
-6 
+7 
+GINFO
+ *
+pgöfo
+=
+NULL
+;
+
+8 
+pgöfo
+=
 	`öô_sys
 ();
 
-7 
-	`míu
-();
-
 9 
+	`míu
+(
+pgöfo
+);
+
+11 
 	}
 }
 
@@ -899,15 +1609,18 @@ _RPFLAG
 1
 .
 0
-10
-99
+13
+120
 employee.c
 employee.h
 fileop.c
 fileop.h
 global.h
 init.c
+init.c
+init.h
 menu.c
+menu.h
 pms.c
 rewardpunish.c
 rewardpunish.h

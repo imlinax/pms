@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include "global.h"
 #include "employee.h"
-GINFO	 *load_all(FILE *fp);//加载存在文件中的所有信息
+GINFO	 *load_all(FILE *fpem,FILE*fprp);//加载存在文件中的所有信息
 EMPLOYEE *load_employees(FILE *fp,int count);//加载count个员工
 RP	 *load_rewardpunish(FILE *fp,int count);//加载count条奖惩记录
 
