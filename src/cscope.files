@@ -1,11 +1,12 @@
 ./pms.c
 ./global.h
 ./employee.c
+./pmsio.h
 ./init.h
 ./fileop.h
 ./rewardpunish.c
-./In file included from init.c
 ./init.c
+./pmsio.c
 ./menu.h
 ./rewardpunish.h
 ./fileop.c

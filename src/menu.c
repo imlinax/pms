@@ -1,7 +1,9 @@
+#include <stdlib.h>
 #include "menu.h"
 void menu(GINFO *pginfo)
 {
 	int sw=0;
+	FILE *fpem=NULL;
 	while(1)
 	{
 		system("clear");
@@ -28,6 +30,15 @@ void menu(GINFO *pginfo)
 //			calc_em_salary(pginfo);
 			break;
 		case 4:
+			fpem=fopen("../data/emdata","r+");			
+			if(fpem==NULL)	
+			{
+				fprintf(stderr,"打开员工信息文件失败!\n");
+				exit(0);
+			}
+			pginfo->em_count=get_employee_count(pginfo->em_head);
+			save_all(fpem,pginfo);
+			fclose(fpem);
 			return ;	
 		default:
 			printf("请输入正确的选项:");
@@ -39,6 +50,9 @@ void menu(GINFO *pginfo)
 int op_eminfo(EMPLOYEE* em_head)
 {	
 	int sw=0;
+	int dirtydata=0;//标记有无脏数据
+	EMPLOYEE* pem=NULL;
+	FILE *fpem=NULL;
 	while(1)
 	{
 		system("clear");
@@ -60,10 +74,26 @@ int op_eminfo(EMPLOYEE* em_head)
 			show_all_eminfo(em_head);
 			break;
 		case 2:
+			pem=input_one_employee();
+			if(add_employee(em_head,pem)==1)
+			{
+				dirtydata=1;	
+			}
 			break;
 		case 3:
 			break;
 		case 4:
+			if(dirtydata==1)
+			{
+				fpem=fopen("../data/emdata","r+");			
+				if(fpem==NULL)	
+				{
+					fprintf(stderr,"打开员工信息文件失败!\n");
+					exit(0);
+				}
+				save_employees(fpem,em_head);
+				fclose(fpem);
+			}
 			return;
 		default:
 			printf("请输入正确的选项:");
@@ -72,40 +102,4 @@ int op_eminfo(EMPLOYEE* em_head)
 	}
 	return 0;
 }
-void show_all_eminfo(EMPLOYEE* em_head)
-{
-	EMPLOYEE* ptmp=em_head;
-	if(ptmp==NULL)
-	{
-		printf("暂无员工信息\n");
-		setbuf(stdin,NULL);
-		getchar();
-		return ;
-	}
-	while(ptmp!=NULL)
-	{
-		show_employee(ptmp);
-		ptmp=ptmp->next;
-	}
-	return ;
-}
-void show_employee(EMPLOYEE* pem)
-{
-	if(pem==NULL)
-	{
-		return ;
-	}
-	printf("ID:%d\n",pem->id);
-	printf("姓名:%s\n",pem->name);
-	printf("职称:%s\n",pem->title);
-	printf("基本薪资:%d",pem->salay);
-	if(pem->online)
-	{
-		printf("工作状态:在职\n");
-	}
-	else
-	{
-		
-		printf("工作状态:离职\n");
-	}
-}
+

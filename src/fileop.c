@@ -32,25 +32,24 @@ EMPLOYEE *load_employees(FILE *fp,int count)
 	{
 		return NULL;
 	}
-	EMPLOYEE* phead=(EMPLOYEE*)malloc(EMP_SAVE_SIZE);
+	EMPLOYEE* phead=(EMPLOYEE*)calloc(1,EMP_SAVE_SIZE);
 	EMPLOYEE* ptmp=phead;
 	fseek(fp,sizeof(GINFO),SEEK_SET);
-	if(ptmp==NULL)
+	if(phead==NULL)
 	{
 		exit(1);
 	}
-	for(i=0;i<count-1;i++)
+	for(i=0;i<count;i++)
 	{
-		fread(ptmp,sizeof(EMP_SAVE_SIZE),1,fp);
 		ptmp->next=(EMPLOYEE*)malloc(EMP_SAVE_SIZE);
 		if(ptmp->next==NULL)
 		{
 			fprintf(stderr,"memory allocation error!\n");
 			exit(1);
 		}
+		fread(ptmp->next,sizeof(EMP_SAVE_SIZE),1,fp);
 		ptmp=ptmp->next;
 	}
-	fread(ptmp,sizeof(EMP_SAVE_SIZE),1,fp);
 	ptmp->next=NULL;
 	return phead;
 }
@@ -64,25 +63,24 @@ RP *load_rewardpunish(FILE *fp,int count)
 	{
 		return NULL;
 	}
-	RP * phead=(RP*)malloc(RP_SAVE_SIZE);
+	RP * phead=(RP*)calloc(1,RP_SAVE_SIZE);
 	RP * ptmp=phead;
 	fseek(fp,sizeof(GINFO),SEEK_SET);
 	if(ptmp==NULL)
 	{
 		exit(1);
 	}
-	for(i=0;i<count-1;i++)
+	for(i=0;i<count;i++)
 	{
-		fread(ptmp,sizeof(RP_SAVE_SIZE),1,fp);
 		ptmp->next=(RP*)malloc(RP_SAVE_SIZE);
 		if(ptmp->next==NULL)
 		{
 			fprintf(stderr,"memory allocation error!\n");
 			exit(1);
 		}
+		fread(ptmp->next,sizeof(RP_SAVE_SIZE),1,fp);
 		ptmp=ptmp->next;
 	}
-	fread(ptmp,sizeof(RP_SAVE_SIZE),1,fp);
 	ptmp->next=NULL;
 	return phead;
 }
@@ -102,11 +100,29 @@ int save_all(FILE *fp,GINFO* pginfo)
 		fprintf(stderr,"save file error!\n");
 		exit(1);
 	}
+	return 1;
 }
 /*
 *存储所有员工信息到文件中
 */
-int save_employees(FILE *fp,EMPLOYEE*);
+int save_employees(FILE *fp,EMPLOYEE* em_head)
+{
+	EMPLOYEE* pem=em_head->next;
+	if(fp==NULL)
+	{
+		return 0;
+	}
+	fseek(fp,sizeof(GINFO),SEEK_SET);
+	while(pem!=NULL)
+	{
+		if(fwrite(pem,sizeof(EMP_SAVE_SIZE),1,fp)!=1)
+		{
+			fprintf(stderr,"save file error!\n");
+			exit(0);
+		}
+	}
+	return 1;
+}
 /*
 *存储所有奖惩记录到文件中
 */

@@ -8,15 +8,17 @@ CFLAGS	Makefile	/^CFLAGS:=-g$/;"	m
 EMPLOYEE	employee.h	/^}EMPLOYEE;$/;"	t	typeref:struct:employee
 EMP_SAVE_SIZE	employee.h	4;"	d
 GINFO	global.h	/^}GINFO;$/;"	t	typeref:struct:global_info
-OBJ	Makefile	/^OBJ:=employee.o menu.o pms.o rewardpunish.o init.o fileop.o$/;"	m
+OBJ	Makefile	/^OBJ:= pmsio.o employee.o menu.o pms.o rewardpunish.o init.o fileop.o$/;"	m
 RP	rewardpunish.h	/^}RP;$/;"	t	typeref:struct:reward_punish
 RP_SAVE_SIZE	rewardpunish.h	8;"	d
 _EMPLOYEES_H	employee.h	2;"	d
 _FILEOP_H	fileop.h	2;"	d
 _GLOBAL_H	global.h	2;"	d
 _MENU_H	menu.h	2;"	d
+_PMSIO_H	pmsio.h	2;"	d
 _REWARDPUNISH_H	rewardpunish.h	2;"	d
 _RPFLAG	rewardpunish.h	5;"	d
+add_employee	employee.c	/^int add_employee(EMPLOYEE *em_head,EMPLOYEE *pem)$/;"	f	signature:(EMPLOYEE *em_head,EMPLOYEE *pem)
 data	rewardpunish.h	/^	char data;\/\/日期$/;"	m	struct:reward_punish	access:public
 description	rewardpunish.h	/^	char description[128];\/\/描述$/;"	m	struct:reward_punish	access:public
 em_count	global.h	/^	int em_count;\/\/保存所有员工数$/;"	m	struct:global_info	access:public
@@ -27,7 +29,9 @@ employee::name	employee.h	/^	char name[32];\/\/姓名$/;"	m	struct:employee	acce
 employee::next	employee.h	/^	struct employee* next;\/\/指向下一个员工$/;"	m	struct:employee	typeref:struct:employee::employee	access:public
 employee::online	employee.h	/^	int online;\/\/标志是否还在公司工作$/;"	m	struct:employee	access:public
 employee::salay	employee.h	/^	int  salay;\/\/基本薪资$/;"	m	struct:employee	access:public
-employee::title	employee.h	/^	char title[16];\/\/职称$/;"	m	struct:employee	access:public
+employee::title	employee.h	/^	int  title;\/\/职称1.初级2.高级3.高级$/;"	m	struct:employee	access:public
+get_employee_count	employee.c	/^int get_employee_count(EMPLOYEE* em_head)$/;"	f	signature:(EMPLOYEE* em_head)
+get_employee_count	employee.h	/^int get_employee_count(EMPLOYEE* em_head);$/;"	p	signature:(EMPLOYEE* em_head)
 global_info	global.h	/^typedef struct global_info$/;"	s
 global_info::em_count	global.h	/^	int em_count;\/\/保存所有员工数$/;"	m	struct:global_info	access:public
 global_info::em_head	global.h	/^	EMPLOYEE *em_head;\/\/	$/;"	m	struct:global_info	access:public
@@ -39,6 +43,10 @@ init_files	init.c	/^int init_files(FILE **fpem,FILE **fprp)$/;"	f	signature:(FIL
 init_files	init.h	/^int init_files(FILE**,FILE**);$/;"	p	signature:(FILE**,FILE**)
 init_sys	init.c	/^GINFO* init_sys()$/;"	f
 init_sys	init.h	/^GINFO* init_sys();$/;"	p	signature:()
+input_one_employee	pmsio.c	/^EMPLOYEE *input_one_employee()$/;"	f
+input_one_employee	pmsio.h	/^EMPLOYEE *input_one_employee();$/;"	p	signature:()
+input_one_rewardpunish	pmsio.c	/^RP * input_one_rewardpunish()$/;"	f
+input_one_rewardpunish	pmsio.h	/^RP	 *input_one_rewardpunish();$/;"	p	signature:()
 load_all	fileop.c	/^GINFO	 *load_all(FILE *fpem,FILE *fprp)$/;"	f	signature:(FILE *fpem,FILE *fprp)
 load_all	fileop.h	/^GINFO	 *load_all(FILE *fpem,FILE*fprp);\/\/加载存在文件中的所有信息$/;"	p	signature:(FILE *fpem,FILE*fprp)
 load_employees	fileop.c	/^EMPLOYEE *load_employees(FILE *fp,int count)$/;"	f	signature:(FILE *fp,int count)
@@ -68,12 +76,12 @@ rpflag	rewardpunish.h	/^	int rpflag;$/;"	m	struct:reward_punish	access:public
 salay	employee.h	/^	int  salay;\/\/基本薪资$/;"	m	struct:employee	access:public
 save_all	fileop.c	/^int save_all(FILE *fp,GINFO* pginfo)$/;"	f	signature:(FILE *fp,GINFO* pginfo)
 save_all	fileop.h	/^int save_all(FILE *fp,GINFO* pginfo);\/\/存储所有信息到文件中$/;"	p	signature:(FILE *fp,GINFO* pginfo)
-save_employees	fileop.c	/^int save_employees(FILE *fp,EMPLOYEE*);$/;"	p	file:	signature:(FILE *fp,EMPLOYEE*)
+save_employees	fileop.c	/^int save_employees(FILE *fp,EMPLOYEE* em_head)$/;"	f	signature:(FILE *fp,EMPLOYEE* em_head)
 save_employees	fileop.h	/^int save_employees(FILE *fp,EMPLOYEE*);\/\/存储所有员工信息到文件中$/;"	p	signature:(FILE *fp,EMPLOYEE*)
 save_rewardpunish	fileop.c	/^int save_rewardpunish(FILE *fp,RP* prp)$/;"	f	signature:(FILE *fp,RP* prp)
 save_rewardpunish	fileop.h	/^int save_rewardpunish(FILE *fp,RP*);\/\/存储所有奖惩记录$/;"	p	signature:(FILE *fp,RP*)
-show_all_eminfo	menu.c	/^void show_all_eminfo(EMPLOYEE* em_head)$/;"	f	signature:(EMPLOYEE* em_head)
-show_all_eminfo	menu.h	/^void show_all_eminfo(EMPLOYEE* em_head);$/;"	p	signature:(EMPLOYEE* em_head)
-show_employee	menu.c	/^void show_employee(EMPLOYEE* pem)$/;"	f	signature:(EMPLOYEE* pem)
-show_employee	menu.h	/^void show_employee(EMPLOYEE* pem);$/;"	p	signature:(EMPLOYEE* pem)
-title	employee.h	/^	char title[16];\/\/职称$/;"	m	struct:employee	access:public
+show_all_eminfo	employee.c	/^void show_all_eminfo(EMPLOYEE* em_head)$/;"	f	signature:(EMPLOYEE* em_head)
+show_all_eminfo	employee.h	/^void show_all_eminfo(EMPLOYEE* em_head);$/;"	p	signature:(EMPLOYEE* em_head)
+show_employee	employee.c	/^void show_employee(EMPLOYEE* pem)$/;"	f	signature:(EMPLOYEE* pem)
+show_employee	employee.h	/^void show_employee(EMPLOYEE* pem);$/;"	p	signature:(EMPLOYEE* pem)
+title	employee.h	/^	int  title;\/\/职称1.初级2.高级3.高级$/;"	m	struct:employee	access:public
